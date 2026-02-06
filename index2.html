@@ -3,51 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <title>Dota or ML</title>
+
   <style>
     body {
       height: 100vh;
+      margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
+      font-family: Arial, sans-serif;
       background: #f5f5f4;
-      font-family: Arial;
     }
+
+    .container {
+      position: relative;
+    }
+
     .box {
-      background: white;
-      padding: 40px;
+      background: rgba(255,255,255,0.95);
+      padding: 50px 70px;
       border-radius: 18px;
       text-align: center;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+
+    
     button {
-      padding: 14px 30px;
-      font-size: 16px;
+      padding: 16px 36px;
+      font-size: 18px;
       margin: 10px;
       border: none;
       border-radius: 10px;
       cursor: pointer;
+      transition: all 0.2s ease-in-out;
     }
+
+    button:hover {
+      opacity: 0.85;
+      transform: scale(1.05);
+    }
+
     .dota {
       background: #e5e7eb;
     }
+
     .ml {
       background: #111827;
       color: white;
     }
+
+    .gif {
+      width: 250px;             
+      height: auto;
+      border-radius: 6px;      
+      position: absolute;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .gif.left {
+      left: -265px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .gif.right {
+      right: -265px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   </style>
 </head>
+
 <body>
 
-  <div class="box">
-    <h1>Dota na 'to? o ML nalang?</h1>
-    <button class="dota" onclick="pickDota()">DOTA</button>
-    <button class="ml" onclick="pickML()">ML</button>
+  <div class="container">
+
+    <img src="letsgo.gif" class="gif left" alt="Lets go">
+    <img src="ready.gif" class="gif right" alt="Ready">
+
+    <div class="box">
+      <h1>Dota na 'to? o ML nalang?</h1>
+
+      <button class="dota" onclick="pickDota()">DOTA</button>
+      <button class="ml" onclick="pickML()">ML</button>
+    </div>
+
   </div>
 
   <script>
     function pickDota() {
       alert("ML nalang sira laptop ko e 😭");
     }
+
     function pickML() {
       window.location.href = "index3.html";
     }
