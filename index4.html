@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sure yan haaa?</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #f5f5f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .sparkles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1px),
+        radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px);
+      background-size: 120px 120px, 220px 220px;
+      animation: sparkleMove 30s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes sparkleMove {
+      from {
+        background-position: 0 0, 0 0;
+      }
+      to {
+        background-position: 400px 800px, -400px -800px;
+      }
+    }
+
+    .box {
+      background: white;
+      padding: 60px;
+      border-radius: 20px;
+      text-align: center;
+      width: 420px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      z-index: 1;
+      animation: pop 0.6s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.95); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .sure {
+      background: #111827;
+      color: white;
+    }
+
+    .notyet {
+      background: #e5e7eb;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✨ Sparkly background -->
+  <div class="sparkles"></div>
+
+  <div class="box">
+    <h1>SURE NA YAN HAAA?</h1>
+    <p id="dateText"></p>
+
+    <div class="buttons">
+      <button class="sure" onclick="sureNa()">SURE</button>
+      <button class="notyet" onmouseenter="takbo()">DI PA</button>
+    </div>
+  </div>
+
+  <script>
+    const date = localStorage.getItem("chosenDate") || "Friday";
+    document.getElementById("dateText").innerText =
+      "G yan sa " + date + " ah 🙂";
+
+    function sureNa() {
+      alert("YAY ☕✨");
+    }
+
+    function takbo() {
+      const btn = document.querySelector(".notyet");
+      const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+      btn.style.position = "fixed";
+      btn.style.left = x + "px";
+      btn.style.top = y + "px";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dota or ML</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f5f5f4;
+      font-family: Arial;
+    }
+    .box {
+      background: white;
+      padding: 40px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    button {
+      padding: 14px 30px;
+      font-size: 16px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .dota {
+      background: #e5e7eb;
+    }
+    .ml {
+      background: #111827;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>Dota na 'to? o ML nalang?</h1>
+    <button class="dota" onclick="pickDota()">DOTA</button>
+    <button class="ml" onclick="pickML()">ML</button>
+  </div>
+
+  <script>
+    function pickDota() {
+      alert("ML nalang sira laptop ko e 😭");
+    }
+    function pickML() {
+      window.location.href = "index3.html";
+    }
+  </script>
+
+</body>
+</html>
