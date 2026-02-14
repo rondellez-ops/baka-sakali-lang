@@ -93,10 +93,54 @@
             Message
         </div>
         <div class="msgbox-body">
-            I've kind of liked you for a long time now. 💌
+            Gusto kita matagal na
         </div>
         <div class="msgbox-footer">
             <button onclick="closeMsg()">OK</button>
+        </div>
+    </div>
+</div>
+
+<div class="overlay" id="letterOverlay">
+    <div class="msgbox" style="width: 400px;">
+        <div class="msgbox-header">
+            Para sayo
+        </div>
+        <div class="msgbox-body" style="max-height: 300px; overflow-y: auto;">
+            <p>
+                Hi...<br><br>
+
+                Matagal ko na talaga gusto sabihin to,
+                kasi ayokong maconfused ka sa mga nasabi ko dati pa.
+                Pansin mo naman na naging awkward din tayo sa isa't isa,
+                at ayoko na magstay sa ganon sitwasyon.<br><br>
+
+                Araw-araw kitang hinahangaan. Hindi lang dahil sa mga achievements mo
+                or sa mga bagay na nagagawa mo, pero dahil sa kung sino ka talaga.
+                The way you handle things, the way you care,
+                kung pano ka nagiging matatag kahit mahirap na.<br><br>
+
+                Yung pagiging kalog mo tuwing naglalaro tayo
+                sobrang tahimik mo sa una, tapos biglang naluluke
+                from 0% to 100% e, tas tatahimik ulit
+                tas maluluke nanaman HAHAHAHAHA cuteskie
+                parang nagchcharge lang e<br><br>
+
+                namimiss ko na ulit kalaro ka, 100%
+
+                And I admire the way you try. Thank you for keeping on going,
+                sobrang proud ko sa kung ano na-achieve mo para sa sarili mo,
+                at yun ang naging isa sa dahilan ko para magpursigi din lalo para sa sarili ko
+                para sa family ko, sa mga kaibigan ko,
+                syempre, para sayo.<br><br>
+                
+                You make me want to be a better person. <br><br>
+
+                Araw-araw kitang gugustuhin.
+            </p>
+        </div>
+        <div class="msgbox-footer">
+            <button onclick="closeLetter()">Close</button>
         </div>
     </div>
 </div>
@@ -108,7 +152,7 @@ let messages = [
     "eme eme lang yung mga nauna kanina",
     "pero baka pwede ka naman diba👉👈🥺",
     "de jk lang",
-    "ganto kasi yan"
+    "ganto kasi yan",
 ];
 
 let currentIndex = 0;
@@ -130,10 +174,14 @@ function closeMsg() {
         document.querySelector(".msgbox-body").innerText = messages[currentIndex];
     } else {
         document.getElementById("popup").style.display = "none";
+        document.getElementById("letterOverlay").style.display = "flex";
     }
+}
+
+function closeLetter() {
+    document.getElementById("letterOverlay").style.display = "none";
 }
 </script>
 
 </body>
 </html>
-
